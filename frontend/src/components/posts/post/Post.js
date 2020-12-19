@@ -6,11 +6,8 @@ import {
   CardMedia,
   Button,
   Typography,
-  CardActionArea,
 } from "@material-ui/core";
-import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import DeleteIcon from "@material-ui/icons/Delete";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import EditIcon from "@material-ui/icons/Edit";
 import moment from "moment";
 import { useDispatch } from "react-redux";
@@ -29,8 +26,7 @@ const Post = ({ post, setCurrentId }) => {
       <CardMedia
         className={classes.media}
         image={
-          post.selectedFile ||
-          "https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png"
+          post.selectedFile
         }
         title={post.title}
       />

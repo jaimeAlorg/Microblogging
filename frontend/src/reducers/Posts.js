@@ -1,6 +1,6 @@
 //posts == states, initial state = []
 export default (posts = [], action) => {
-    console.log("Reducer de Posts");
+    console.log("Reducer of Posts");
     switch(action.type){
         case 'FETCH_ALL':
             return action.payload;

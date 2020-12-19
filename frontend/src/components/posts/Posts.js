@@ -5,7 +5,6 @@ import { CircularProgress, Grid } from "@material-ui/core";
 import Post from "./post/Post";
 import useStyles from "./Styles";
 
-
 const Posts = ({ setCurrentId }) => {
   const classes = useStyles();
   
