@@ -11,7 +11,7 @@ export const getPost = async (req, res) => {
         //Asynchronous await because it takes time to find the data from a model
         const postMessages = await PostMessage.find();
 
-        //Return Satisfactory awnser
+        //Return Satisfactory answer
         res.status(200).json(postMessages);
     }catch(error){
         //Return error 
@@ -40,7 +40,9 @@ export const updatePost = async (req, res) => {
     const { id } = req.params;
     const { title, message, creator, selectedFile } = req.body;
     
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).send(`No post with id: ${id}`);
+    }
 
     const updatedPost = { creator, title, message, selectedFile, _id: id };
 
@@ -52,7 +54,9 @@ export const updatePost = async (req, res) => {
 export const deletePost = async (req, res) => {
     const { id } = req.params;
 
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+    if (!mongoose.Types.ObjectId.isValid(id)){
+     return res.status(404).send(`No post with id: ${id}`);
+    }
 
     await PostMessage.findByIdAndRemove(id);
 

@@ -11,6 +11,8 @@ const app = express();
 //urlencoded and bodyParser = NEEDED FOR POST REQUEST = SENDING DATA
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+
+//middleware 
 app.use(cors());
 
 //Every route inside the postRoutes is going to be localhost:8080/posts
